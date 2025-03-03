@@ -38,7 +38,7 @@ public class ProfilePage {
     }
 
     public void doLogout(){
-        elementUtil.implicitWait(1);
+        elementUtil.implicitWait(5);
         elementUtil.doClick(profileDropdown);
         elementUtil.doClick(logoutBtn);
     }

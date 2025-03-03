@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.naukri.factory.DriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -22,13 +23,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ElementUtil {
     public WebDriver driver;
+    public JavaScriptUtil jsUtil;
 
     public ElementUtil(WebDriver driver) {
         this.driver = driver;
+        jsUtil = new JavaScriptUtil(this.driver);
     }
 
     public WebElement getElement(By locator) {
-        return driver.findElement(locator);
+        WebElement element = driver.findElement(locator);
+        if(Boolean.parseBoolean(DriverFactory.highlight)){
+            jsUtil.flash(element);
+        }
+        return element;
     }
 
     public List<WebElement> doGetElements(By locator) {

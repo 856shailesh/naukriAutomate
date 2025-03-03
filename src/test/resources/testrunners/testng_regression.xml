@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Naukri Test Suite" verbose="4" thread-count="5"
+       parallel="tests">
+    <!--
+        <listeners>
+            <listener
+                    class-name="com.qa.opencart.listeners.AnnotationTransformer" />
+            <listener
+                    class-name="com.qa.opencart.listeners.ExtentReportListener" />
+            <listener
+                    class-name="com.qa.opencart.listeners.TestAllureListener" />
+
+        </listeners> -->
+
+        <test name="Update Test">
+            <parameter name="browser" value="chrome" />
+            <classes>
+                <class name="com.naukri.tests.ProfilePageTest" />
+            </classes>
+        </test>
+
+        <!-- <test name="Open Cart Login Page Test - ch - 90">
+            <parameter name="browser" value="chrome" />
+            <parameter name="browserversion" value="90" />
+
+            <classes>
+                <class name="com.qa.opencart.tests.LoginPageTest" />
+            </classes>
+        </test> -->
+
+    <!-- <test name="Open Cart Accounts Page Test - ch - 90">
+        <parameter name="browser" value="chrome" />
+        <parameter name="browserversion" value="90" />
+
+        <classes>
+            <class name="com.qa.opencart.tests.AccountsPageTest" />
+        </classes>
+    </test>
+     -->
+
+    <!-- <test name="Open Cart Registration Page Test - ff - 57">
+        <parameter name="browser" value="firefox" />
+        <parameter name="browserversion" value="57" />
+        <classes>
+            <class name="com.qa.opencart.tests.RegistrationPageTest" />
+        </classes>
+    </test> -->
+
+</suite>
